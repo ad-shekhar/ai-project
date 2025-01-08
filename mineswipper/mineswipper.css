@@ -1,0 +1,112 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1f1f1f;
+  color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+#game-container {
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  width: fit-content;
+  border: 1px solid #444;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffca28; /* Gold color for a contrast */
+}
+
+#mines-remaining {
+  font-size: 1.5rem;
+  color: #ffca28;
+  margin-bottom: 20px;
+}
+
+#grid-container {
+  display: grid;
+  grid-template-columns: repeat(10, 45px);
+  grid-gap: 8px;
+  margin-bottom: 20px;
+}
+
+.grid-cell {
+  width: 45px;
+  height: 45px;
+  background-color: #444;
+  border: 1px solid #666;
+  text-align: center;
+  line-height: 45px;
+  font-size: 20px;
+  color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s, transform 0.1s ease-in-out;
+}
+
+.grid-cell:hover {
+  background-color: #616161;
+  transform: scale(1.05);
+}
+
+.grid-cell.revealed {
+  background-color: #303030;
+  cursor: default;
+}
+
+.grid-cell.mine {
+  background-color: #d32f2f;
+  color: white;
+  font-weight: bold;
+}
+
+.grid-cell[data-revealed="true"] {
+  background-color: #383838;
+}
+
+button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s, transform 0.1s;
+  margin-top: 20px;
+  width: 200px;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+button:active {
+  background-color: #1c7430;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:disabled {
+  background-color: #616161;
+  cursor: not-allowed;
+}
